@@ -1,8 +1,76 @@
+@import '../../global.scss';
+
 .navbar {
-    background-color: darkblue;
+    background-color: white;
+    color: $mainColor;
     width: 100%;
     height: 70px;
     position: fixed;
     top: 0;
     z-index: 2;
+    transition: all 1s ease;
+
+    .wrapper{
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .left{
+            display: flex;
+            align-items: center;
+
+            .logo{
+                font-size: 40px;
+                font-weight: 700;
+                text-decoration: none;
+                color: inherit;
+                margin-right: 40px;
+            }
+
+            .itemContainer{
+                display: flex;
+                align-items: center;
+                margin-left: 30px;
+
+                .clickable{
+                    text-decoration: none;
+                    color: inherit;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .icon{
+                    font-size: 25px;
+                    margin-right: 5px;
+                }
+
+                span{
+                    color:inherit;
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .right{
+            .hamburger{
+                color: inherit;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 1s ease;
+            }
+            
+        }   
+    }
+
+    &.active {
+        background-color: $mainColor;
+        color: white;
+
+        .hamburger{
+            transform: rotate(90deg);
+        }
+    }
+
 }
